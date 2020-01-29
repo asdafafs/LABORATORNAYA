@@ -5,24 +5,24 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-public class Client {
-private IntegerProperty idclient;
+public class Inspector {
+private IntegerProperty idInspector;
 private StringProperty Name;
 private StringProperty Surname;
 private StringProperty Position;
 private StringProperty Rank;
 private StringProperty Conclusion;
 
-public Client() {
-	this.idclient=new SimpleIntegerProperty(0);
+public Inspector() {
+	this.idInspector=new SimpleIntegerProperty(0);
 	this.Name= new SimpleStringProperty("");
 	this.Surname= new SimpleStringProperty("");
 	this.Position=new SimpleStringProperty("");
 	this.Rank=new SimpleStringProperty("");
 	this.Conclusion=new SimpleStringProperty("");
 	}
-public Client(Integer idclient, String Name, String Surname, String Position, String Rank, String Conclusion) {
-	this.idclient=new SimpleIntegerProperty(idclient);
+public Inspector(Integer idInspector, String Name, String Surname, String Position, String Rank, String Conclusion) {
+	this.idInspector=new SimpleIntegerProperty(idInspector);
 	this.Name= new SimpleStringProperty(Name);
 	this.Surname= new SimpleStringProperty(Surname);
 	this.Position=new SimpleStringProperty(Position);
@@ -31,8 +31,8 @@ public Client(Integer idclient, String Name, String Surname, String Position, St
 	}
 
 
-public Integer getIdclient() {
-	return this.idclient.get();
+public Integer getidInspector() {
+	return this.idInspector.get();
 }
 public String getName() {
 	return this.Name.get();
