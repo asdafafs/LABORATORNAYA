@@ -1,13 +1,14 @@
 package application;
 
 
+
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public class Inspector {
-private IntegerProperty idInspector;
+private IntegerProperty IdInspector;
 private StringProperty Name;
 private StringProperty Surname;
 private StringProperty Position;
@@ -15,15 +16,15 @@ private StringProperty Rank;
 private StringProperty Conclusion;
 
 public Inspector() {
-	this.idInspector=new SimpleIntegerProperty(0);
+	this.IdInspector=new SimpleIntegerProperty(0);
 	this.Name= new SimpleStringProperty("");
 	this.Surname= new SimpleStringProperty("");
 	this.Position=new SimpleStringProperty("");
 	this.Rank=new SimpleStringProperty("");
 	this.Conclusion=new SimpleStringProperty("");
 	}
-public Inspector(Integer idInspector, String Name, String Surname, String Position, String Rank, String Conclusion) {
-	this.idInspector=new SimpleIntegerProperty(idInspector);
+public Inspector(Integer IdInspector, String Name, String Surname, String Position, String Rank, String Conclusion) {
+	this.IdInspector=new SimpleIntegerProperty(IdInspector);
 	this.Name= new SimpleStringProperty(Name);
 	this.Surname= new SimpleStringProperty(Surname);
 	this.Position=new SimpleStringProperty(Position);
@@ -32,8 +33,8 @@ public Inspector(Integer idInspector, String Name, String Surname, String Positi
 	}
 
 
-public Integer getidInspector() {
-	return this.idInspector.get();
+public Integer getIdInspector() {
+	return this.IdInspector.get();
 }
 public String getName() {
 	return this.Name.get();

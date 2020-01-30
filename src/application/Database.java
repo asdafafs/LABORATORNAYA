@@ -1,5 +1,6 @@
 package application;
 
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -57,7 +58,7 @@ private boolean openConnection() {
 			 st = conn.createStatement();
 			 rs = st.executeQuery("select*from anton.Inspector");
 			 while(rs.next()) {
-				 lInspector.add(new Inspector(rs.getInt("idInspector"), 
+				 lInspector.add(new Inspector(rs.getInt("IdInspector"), 
 						 rs.getString("Name"), rs.getString("Surname"), rs.getString("Position"), 
 						 rs.getString("Rank"),rs.getString("Conclusion")));
 			 }}
@@ -80,8 +81,8 @@ private boolean openConnection() {
 	 return lInspector;
 		 }
  /**
- * return Inspector on idInspector
- ** @param idc for id Inspector
+ * return Inspector on IdInspector
+ ** @param idc for Id Inspector
  * @return new Inspector
  */
  public void newInspector(String Name, String Surname, String Position, String Rank, String Conclusion) {
@@ -89,7 +90,7 @@ private boolean openConnection() {
 	 Statement st = null;
 	 try {
 	 st = conn.createStatement();
-	 st.executeUpdate("insert into LABORATORNAYA.Inspector (Name, Surname, Position, Rank, Conclusion)"
+	 st.executeUpdate("insert into anton.Inspector (Name, Surname, Position, Rank, Conclusion)"
 	 + "values('" + Name + "','"	 + Surname + "','" + Position + "','" + Rank+ "','" + Conclusion+"');");
 	 } catch (SQLException e) {
 	 System.out.println("SQl exception" + e.getMessage());
