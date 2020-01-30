@@ -1,1 +1,26 @@
 /* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+.background {
+-fx-background-color: #dddddd;
+}
+.table-view {
+-fx-control-inner-background: #dddddd;
+}
+.label {
+-fx-font-size: 10pt;
+-fx-text-fill: blue;
+-fx-opacity: 0.5;
+}
+.label-header {
+-fx-font-size: 18pt;
+-fx-text-fill: blue;
+-fx-opacity: 1;
+}
+.button:hover {
+-fx-background-color: lightblue;
+}
+.button:pressed, .button:hover:pressed {
+-fx-background-color: blue;
+}
+.button:focused {
+-fx-border-color: lightblue, lightblue;
+}

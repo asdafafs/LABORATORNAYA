@@ -57,8 +57,9 @@ private boolean openConnection() {
 				 if(st != null)
 					 st.close();
 				 closeConnection();}
-			 catch(SQLExpection e ) {
+			 catch(SQLException e ) {
 				 e.printStackTrace();
+				 
 			 }
 			 st=null;
 			 }
