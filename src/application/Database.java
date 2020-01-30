@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 
 public class Database {
@@ -20,9 +21,11 @@ public Database() {
 private boolean openConnection() {
 	try {
 		Class.forName("com.mysql.jdbc.Driver").newInstance();
-		String password = null;
-		String login = null;
-		this.conn = DriverManager.getConnection("jdbc:mysql://localhost/asff?user="+login+"&password="+password+"");
+		Scanner text2=new Scanner(System.in);
+		String login = text2.next();
+		Scanner text=new Scanner(System.in);
+		String password = text.next();
+		this.conn = DriverManager.getConnection("jdbc:mysql://localhost/anton?user="+login+"&password="+password+"");
 	} catch (InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException e) {
 		System.out.println("SQL exception"+ e.getMessage());
 		e.printStackTrace();
@@ -54,7 +57,7 @@ private boolean openConnection() {
 	 if(openConnection()) {
 		 try {
 			 st = conn.createStatement();
-			 rs = st.executeQuery("select*from LABORATORNAYA.Inspector");
+			 rs = st.executeQuery("select*from anton.Inspector");
 			 while(rs.next()) {
 				 lInspector.add(new Inspector(rs.getInt("idInspector"), 
 						 rs.getString("Name"), rs.getString("Surname"), rs.getString("Position"), 
