@@ -19,19 +19,21 @@ public class SampleController {
 	@FXML private TableColumn<Inspector, String> tcPosition;
 	@FXML private TableColumn<Inspector, String> tcRank;
 	@FXML private TableColumn<Inspector, String> tcConclusion;
+	
 	@FXML private Label lIdInspector;
-
 	@FXML private Label lName;
 	@FXML private Label lSurname;
 	@FXML private Label lPosition;
 	@FXML private Label lRank;
 	@FXML private Label lConsclusion;
+	
 	@FXML private TextField tfIdInspector;
 	@FXML private TextField tfName;
 	@FXML private TextField tfSurname;
 	@FXML private TextField tfPosition;
 	@FXML private TextField tfRank;
 	@FXML private TextField tfConclusion;
+	
 	@FXML private Button bNew;
 	@FXML private Button bEdit;
 	@FXML private Button bDelete;	

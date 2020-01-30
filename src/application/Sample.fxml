@@ -50,25 +50,25 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label text="id" />
-                        <Label text="Name" GridPane.rowIndex="1" />
-                        <Label text="Surname" GridPane.rowIndex="2" />
-                        <Label text="Position" GridPane.rowIndex="3" />
-                        <Label text="Rank" GridPane.rowIndex="4" />
-                        <Label text="Conclusion" GridPane.rowIndex="5" />
-                        <TextField editable="false" prefHeight="25.0" prefWidth="192.0" GridPane.columnIndex="1" />
-                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Label fx:id="lIdInspector" text="id" />
+                        <Label fx:id="lName" text="Name" GridPane.rowIndex="1" />
+                        <Label fx:id="lSurname" text="Surname" GridPane.rowIndex="2" />
+                        <Label fx:id="lPosition" text="Position" GridPane.rowIndex="3" />
+                        <Label fx:id="lRank" text="Rank" GridPane.rowIndex="4" />
+                        <Label fx:id="lConsclusion" text="Conclusion" GridPane.rowIndex="5" />
+                        <TextField fx:id="tfIdInspector" editable="false" prefHeight="25.0" prefWidth="192.0" GridPane.columnIndex="1" />
+                        <TextField fx:id="tfName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="tfSurname" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="tfPosition" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="tfRank" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <TextField fx:id="tfConclusion" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                      </children>
                   </GridPane>
                   <ButtonBar layoutX="45.0" layoutY="230.0" prefHeight="54.0" prefWidth="304.0">
                     <buttons>
-                        <Button mnemonicParsing="false" onAction="#handleNew" text="new" />
-                      <Button mnemonicParsing="false" text="edit" />
-                        <Button mnemonicParsing="false" text="delete" />
+                        <Button fx:id="bNew" mnemonicParsing="false" onAction="#handleNew" text="new" />
+                      <Button fx:id="bEdit" mnemonicParsing="false" text="edit" />
+                        <Button fx:id="bDelete" mnemonicParsing="false" text="delete" />
                     </buttons>
                   </ButtonBar>
                </children>
