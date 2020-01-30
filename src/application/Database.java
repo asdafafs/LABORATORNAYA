@@ -21,10 +21,8 @@ public Database() {
 private boolean openConnection() {
 	try {
 		Class.forName("com.mysql.jdbc.Driver").newInstance();
-		Scanner text2=new Scanner(System.in);
-		String login = text2.next();
-		Scanner text=new Scanner(System.in);
-		String password = text.next();
+		String login = "root";
+		String password = "zashue";
 		this.conn = DriverManager.getConnection("jdbc:mysql://localhost/anton?user="+login+"&password="+password+"");
 	} catch (InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException e) {
 		System.out.println("SQL exception"+ e.getMessage());
