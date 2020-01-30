@@ -1,0 +1,1 @@
+"java.exe" - jar "% C:\Program Files\SceneBuilder\app\scenebuilder-11.0.0-all.jar%"			
