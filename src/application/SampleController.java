@@ -13,21 +13,21 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 public class SampleController {
 	@FXML private TableView<Inspector> tvInspector;
-	@FXML private TableColumn<Inspector, Integer> tcIdInspector;
+	@FXML private TableColumn<Inspector, Integer> tcidInspector;
 	@FXML private TableColumn<Inspector, String> tcName;
 	@FXML private TableColumn<Inspector, String> tcSurname;
 	@FXML private TableColumn<Inspector, String> tcPosition;
 	@FXML private TableColumn<Inspector, String> tcRank;
 	@FXML private TableColumn<Inspector, String> tcConclusion;
 	
-	@FXML private Label lIdInspector;
+	@FXML private Label lidInspector;
 	@FXML private Label lName;
 	@FXML private Label lSurname;
 	@FXML private Label lPosition;
 	@FXML private Label lRank;
 	@FXML private Label lConsclusion;
 	
-	@FXML private TextField tfIdInspector;
+	@FXML private TextField tfidInspector;
 	@FXML private TextField tfName;
 	@FXML private TextField tfSurname;
 	@FXML private TextField tfPosition;
@@ -42,7 +42,7 @@ public class SampleController {
 	
 	@FXML
 	private void initialize() {
-	tcIdInspector.setCellValueFactory(new PropertyValueFactory<Inspector, Integer>("IdInspector"));
+	tcidInspector.setCellValueFactory(new PropertyValueFactory<Inspector, Integer>("idInspector"));
 	tcName.setCellValueFactory(new PropertyValueFactory<Inspector, String>("Name"));
 	tcSurname.setCellValueFactory(new PropertyValueFactory<Inspector, String>("Surname"));
 	tcPosition.setCellValueFactory(new PropertyValueFactory<Inspector, String>("Position"));
@@ -57,14 +57,14 @@ public class SampleController {
 	}
 	private void showInspectorDetails(Inspector cl) {
 		if (cl != null) {
-		tfIdInspector.setText(Integer.toString(cl.getIdInspector()));
+		tfidInspector.setText(Integer.toString(cl.getidInspector()));
 		tfName.setText(cl.getName());
 		tfSurname.setText(cl.getSurname());
 		tfPosition.setText(cl.getPosition());
 		tfRank.setText(cl.getRank());
 		tfConclusion.setText(cl.getConclusion());
 		} else {
-		tfIdInspector.setText("");
+		tfidInspector.setText("");
 		tfName.setText("");
 		tfSurname.setText("");
 		tfPosition.setText("");

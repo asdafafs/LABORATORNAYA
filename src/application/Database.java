@@ -8,8 +8,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
-
 
 public class Database {
 private Connection conn;
@@ -47,7 +45,7 @@ private boolean openConnection() {
  
  /**
  * return all client
- * @return List<Client>
+ * @return List<Inspector>
  */
  public List<Inspector> getAllInspector(){
 	 Statement st = null;
@@ -58,7 +56,7 @@ private boolean openConnection() {
 			 st = conn.createStatement();
 			 rs = st.executeQuery("select*from anton.Inspector");
 			 while(rs.next()) {
-				 lInspector.add(new Inspector(rs.getInt("IdInspector"), 
+				 lInspector.add(new Inspector(rs.getInt("idInspector"), 
 						 rs.getString("Name"), rs.getString("Surname"), rs.getString("Position"), 
 						 rs.getString("Rank"),rs.getString("Conclusion")));
 			 }}
@@ -81,8 +79,8 @@ private boolean openConnection() {
 	 return lInspector;
 		 }
  /**
- * return Inspector on IdInspector
- ** @param idc for Id Inspector
+ * return Inspector on idInspector
+ ** @param idc for id Inspector
  * @return new Inspector
  */
  public void newInspector(String Name, String Surname, String Position, String Rank, String Conclusion) {

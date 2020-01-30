@@ -20,7 +20,7 @@
                <children>
                   <TableView fx:id="tvInspector" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <columns>
-                      <TableColumn fx:id="tcIdInspector" prefWidth="44.0" text="id" />
+                      <TableColumn fx:id="tcidInspector" prefWidth="44.0" text="id" />
                       <TableColumn fx:id="tcName" prefWidth="96.0" text="Name" />
                         <TableColumn fx:id="tcSurname" prefWidth="61.0" text="Surname" />
                         <TableColumn fx:id="tcPosition" prefWidth="75.0" text="Position" />
@@ -50,13 +50,13 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label fx:id="lIdInspector" text="id" />
+                        <Label fx:id="lidInspector" text="id" />
                         <Label fx:id="lName" text="Name" GridPane.rowIndex="1" />
                         <Label fx:id="lSurname" text="Surname" GridPane.rowIndex="2" />
                         <Label fx:id="lPosition" text="Position" GridPane.rowIndex="3" />
                         <Label fx:id="lRank" text="Rank" GridPane.rowIndex="4" />
                         <Label fx:id="lConsclusion" text="Conclusion" GridPane.rowIndex="5" />
-                        <TextField fx:id="tfIdInspector" editable="false" prefHeight="25.0" prefWidth="192.0" GridPane.columnIndex="1" />
+                        <TextField fx:id="tfidInspector" editable="false" prefHeight="25.0" prefWidth="192.0" GridPane.columnIndex="1" />
                         <TextField fx:id="tfName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <TextField fx:id="tfSurname" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <TextField fx:id="tfPosition" GridPane.columnIndex="1" GridPane.rowIndex="3" />
