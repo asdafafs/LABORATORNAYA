@@ -1,8 +1,5 @@
 package application;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -40,7 +37,6 @@ public class SampleController {
 	@FXML private Button bDelete;	
 	
 	private Database db = new Database();
-	private DateFormat df = new SimpleDateFormat("yyyy-mm-dd");
 	
 	@FXML
 	private void initialize() {
@@ -74,6 +70,9 @@ public class SampleController {
 		tfConclusion.setText("");
 		}
 		}
+	/**
+	* handle add new Inspector
+	*/
 	@FXML
 	private void handleNew() {
 	if (isInputValid()) {

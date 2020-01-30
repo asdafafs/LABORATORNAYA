@@ -14,10 +14,13 @@ private Connection conn;
 public Database() {
 	this.conn=null;
 }
+/**
+* open connection
+*/
 private boolean openConnection() {
 	try {
 		Class.forName("com.mysql.jdbc.Driver").newInstance();
-		this.conn = DriverManager.getConnection("jdbc:mysql://nix:3306/asff?user=LABORATORNAYA&password=LAORATORNAYA");
+		this.conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/asff?user=LABORATORNAYA&password=LAORATORNAYA");
 	} catch (InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException e) {
 		System.out.println("SQL exception"+ e.getMessage());
 		e.printStackTrace();
@@ -26,6 +29,9 @@ private boolean openConnection() {
 	}
 	return true;
 }
+/**
+* close connection
+*/
  public void closeConnection() {
 	 try {
 		 if (this.conn != null)this.conn.close();
@@ -34,6 +40,11 @@ private boolean openConnection() {
 	 }
 	 this.conn=null;
  }
+ 
+ /**
+ * return all client
+ * @return List<Client>
+ */
  public List<Inspector> getAllInspector(){
 	 Statement st = null;
 	 ResultSet rs = null;
@@ -41,7 +52,7 @@ private boolean openConnection() {
 	 if(openConnection()) {
 		 try {
 			 st = conn.createStatement();
-			 rs = st.executeQuery("select*from LABORATORNAYA.client");
+			 rs = st.executeQuery("select*from LABORATORNAYA.Inspector");
 			 while(rs.next()) {
 				 lInspector.add(new Inspector(rs.getInt("idInspector"), 
 						 rs.getString("Name"), rs.getString("Surname"), rs.getString("Position"), 
@@ -59,13 +70,17 @@ private boolean openConnection() {
 				 closeConnection();}
 			 catch(SQLException e ) {
 				 e.printStackTrace();
-				 
 			 }
 			 st=null;
 			 }
 		 }
 	 return lInspector;
 		 }
+ /**
+ * return Inspector on idInspector
+ ** @param idc for id Inspector
+ * @return new Inspector
+ */
  public void newInspector(String Name, String Surname, String Position, String Rank, String Conclusion) {
 	 if (openConnection()) {
 	 Statement st = null;
