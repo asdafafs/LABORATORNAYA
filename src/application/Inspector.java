@@ -1,6 +1,4 @@
 package application;
-
-
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -50,5 +48,4 @@ public String getRank() {
 public String getConclusion() {
 	return this.Conclusion.get();
 }
-
 }
