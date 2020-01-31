@@ -35,7 +35,7 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="276.0" prefWidth="428.0">
                <children>
-                  <Label nodeOrientation="LEFT_TO_RIGHT" text="TehOsmotr" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0" />
+                  <Label nodeOrientation="LEFT_TO_RIGHT" text="Details" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0" />
                   <GridPane layoutY="21.0" prefHeight="193.0" prefWidth="377.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="30.0">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
