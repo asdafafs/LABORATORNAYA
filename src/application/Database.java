@@ -120,7 +120,7 @@ private boolean openConnection() {
 			Statement st = null;
 			try {
 				st = conn.createStatement();
-				st.executeUpdate("update db1.client set Name ='"+Name+"', Surname = '"
+				st.executeUpdate("update anton.Inspector set Name ='"+Name+"', Surname = '"
 				+Surname+"', Position= '" +Position+  "', Rank = '"+Rank+"', Conclusion = '"+Conclusion+"' where idInspector = '"+idInspector+"';");
 			} 
 			catch (SQLException e) {
@@ -146,7 +146,7 @@ private boolean openConnection() {
 			Statement st = null;
 			try {
 				st = conn.createStatement();
-				st.executeUpdate("delete from db1.client where idclient = '" + idInspector + "';");
+				st.executeUpdate("delete from anton.Inspector where idInspector = '" + idInspector + "';");
 			} 
 			catch (SQLException e) {
 				System.out.println("SQl exception" + e.getMessage());

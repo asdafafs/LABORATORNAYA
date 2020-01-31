@@ -67,7 +67,7 @@
                   <ButtonBar layoutX="45.0" layoutY="230.0" prefHeight="54.0" prefWidth="304.0">
                     <buttons>
                         <Button fx:id="bNew" mnemonicParsing="false" onAction="#handleNew" text="new" />
-
+                        <Button fx:id="bUpdate" mnemonicParsing="false" onAction="#handleUpd" text="update" />
                         <Button fx:id="bDelete" mnemonicParsing="false" onAction="#handleDel" text="delete" />
                     </buttons>
                   </ButtonBar>
