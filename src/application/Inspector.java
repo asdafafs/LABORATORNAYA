@@ -13,7 +13,7 @@ private StringProperty Rank;
 private StringProperty Conclusion;
 
 public Inspector() {
-	this.idInspector=new SimpleIntegerProperty(0);
+	this.idInspector=new SimpleIntegerProperty(1);
 	this.Name= new SimpleStringProperty("");
 	this.Surname= new SimpleStringProperty("");
 	this.Position=new SimpleStringProperty("");
@@ -30,7 +30,7 @@ public Inspector(Integer idInspector, String Name, String Surname, String Positi
 	}
 
 
-public Integer getidInspector() {
+public Integer getIdInspector() {
 	return this.idInspector.get();
 }
 public String getName() {

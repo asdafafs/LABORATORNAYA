@@ -57,7 +57,7 @@ public class SampleController {
 	}
 	private void showInspectorDetails(Inspector cl) {
 		if (cl != null) {
-		tfidInspector.setText(Integer.toString(cl.getidInspector()));
+		tfidInspector.setText(Integer.toString(cl.getIdInspector()));
 		tfName.setText(cl.getName());
 		tfSurname.setText(cl.getSurname());
 		tfPosition.setText(cl.getPosition());

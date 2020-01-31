@@ -59,10 +59,12 @@ private boolean openConnection() {
 				 lInspector.add(new Inspector(rs.getInt("idInspector"), 
 						 rs.getString("Name"), rs.getString("Surname"), rs.getString("Position"), 
 						 rs.getString("Rank"),rs.getString("Conclusion")));
+				 
 			 }}
 		 catch(SQLException e) {
 				 System.out.println("SQL exception" + e.getMessage());
 				 e.printStackTrace();
+				 
 				 return null;
 			 }
 		 finally {
@@ -74,9 +76,15 @@ private boolean openConnection() {
 				 e.printStackTrace();
 			 }
 			 st=null;
-			 }
+			 
 		 }
+
+		 }
+	 for (int i = 1; i < lInspector.size(); i++) {
+         System.out.println(lInspector.get(i).getIdInspector()+lInspector.get(i).getName()+lInspector.get(i).getSurname()+lInspector.get(i).getPosition()+lInspector.get(i).getRank()+lInspector.get(i).getConclusion());
+      }
 	 return lInspector;
+
 		 }
  /**
  * return Inspector on idInspector
