@@ -1,5 +1,8 @@
 package application;
 
+import java.sql.Date;
+import java.text.ParseException;
+
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -35,7 +38,7 @@ public class SampleController {
 	@FXML private TextField tfConclusion;
 	
 	@FXML private Button bNew;
-	@FXML private Button bEdit;
+	@FXML private Button bUpdate;
 	@FXML private Button bDelete;	
 	
 	private Database db = new Database();
@@ -77,42 +80,103 @@ public class SampleController {
 	*/
 	@FXML
 	private void handleNew() {
-	if (isInputValid()) {
+	if (isInputValid(1)) {
 	db.newInspector(tfName.getText(), tfSurname.getText(), tfPosition.getText(),tfRank.getText(),tfConclusion.getText());
 	} 
 	tvInspector.setItems(FXCollections.observableArrayList(db.getAllInspector()));
 	}
-	
+		//удалить строчку с id n
+		@FXML
+		private void handleDel() {
+			if (isInputValid(2)) {
+				db.delInspector(Integer.parseInt(tfidInspector.getText()));
+			}
+			tvInspector.setItems(FXCollections.observableArrayList(db.getAllInspector()));
+		}
+		//обновить строку с id n на параметры
+	@FXML
+	private void handleUpd() {
+		if (isInputValid(3)) {
+			db.updInspector(Integer.parseInt(tfidInspector.getText()), tfName.getText(),tfSurname.getText(), tfPosition.getText(),tfRank.getText(),tfConclusion.getText());
+		}
+		tvInspector.setItems(FXCollections.observableArrayList(db.getAllInspector()));
+		}
 	/**
 	* check input
 	* @return true if input correct
 	*/
-	private boolean isInputValid() {
-	String errorMessage = "";
-	if (tfName.getText() == null || tfName.getText().length() == 0) {
-	errorMessage += "No valid name!\n";
-	}
-	if (tfSurname.getText() == null || tfSurname.getText().length() == 0) {
-	errorMessage += "No valid surname!\n";
-	}
-	if (tfPosition.getText() == null || tfPosition.getText().length() == 0) {
-		errorMessage += "No valid position!\n";
+	
+	private boolean isInputValid(int i) {
+		String errorMessage = "";
+		if (i == 1) {
+			if (tfName.getText() == null || tfName.getText().length() == 0) {
+				errorMessage += "No valid name!\n";
+			}
+			if (tfSurname.getText() == null || tfSurname.getText().length() == 0) {
+				errorMessage += "No valid Surname!\n";
+			}
+			if (tfPosition.getText() == null || tfPosition.getText().length() == 0) {
+				errorMessage += "No valid Position!\n";
+			}
+			if (tfRank.getText() == null || tfRank.getText().length() == 0) {
+				errorMessage += "No valid Rank!\n";
+			}
+			if (tfConclusion.getText() == null || tfConclusion.getText().length() == 0) {
+				errorMessage += "No valid conclusion!\n";
+				}
+			
 		}
-	if (tfRank.getText() == null || tfRank.getText().length() == 0) {
-		errorMessage += "No valid rank!\n";
+		if (i == 2) {
+			if (tfidInspector.getText() == null || tfidInspector.getText().length() == 0) {
+				errorMessage += "No valid ID!\n";				
+			}
+			else {
+				try {
+					Integer.parseInt(tfidInspector.getText());
+				}
+				catch (NumberFormatException e) {
+					errorMessage += "Format ID is not a number!\n";
+				}
+			}
 		}
-	if (tfConclusion.getText() == null || tfConclusion.getText().length() == 0) {
-		errorMessage += "No valid conclusion!\n";
+		if (i==3) {
+			if (tfidInspector.getText() == null || tfidInspector.getText().length() == 0) {
+				errorMessage += "No valid ID!\n";				
+			}
+			else {
+				try {
+					Integer.parseInt(tfidInspector.getText());
+				}
+				catch (NumberFormatException e) {
+					errorMessage += "Format ID is not a number!\n";
+				}
+			}
+			if (tfName.getText() == null || tfName.getText().length() == 0) {
+				errorMessage += "No validname!\n";
+			}
+			if (tfSurname.getText() == null || tfSurname.getText().length() == 0) {
+				errorMessage += "No valid last name!\n";
+			}
+			if (tfPosition.getText() == null || tfPosition.getText().length() == 0) {
+				errorMessage += "No valid position!\n";
+			}
+			if (tfRank.getText() == null || tfRank.getText().length() == 0) {
+				errorMessage += "No valid Rank!\n";
+			}
+			if (tfConclusion.getText() == null || tfConclusion.getText().length() == 0) {
+				errorMessage += "No valid conclusion!\n";
+			}			
 		}
-	if (errorMessage.length() == 0) {
-	return true;
-	} else {
-	Alert alert = new Alert(AlertType.ERROR);
-	alert.setTitle("Invalid Fields");
-	alert.setHeaderText("Please correct invalid fields");
-	alert.setContentText(errorMessage);
-	alert.showAndWait();
-	return false;
-	}
+		if (errorMessage.length() == 0) {
+			return true;
+		} 
+		else {
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setTitle("Invalid Fields");
+			alert.setHeaderText("Please correct invalid fields");
+			alert.setContentText(errorMessage);
+			alert.showAndWait();
+			return false;
+		}
 	}
 }

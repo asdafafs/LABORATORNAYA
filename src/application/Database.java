@@ -2,6 +2,7 @@ package application;
 
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -113,5 +114,56 @@ private boolean openConnection() {
 	 }
 	 }
 	 }	 
+	//обновление данных
+	public void updInspector(Integer idInspector, String Name, String Surname, String Position, String Rank, String Conclusion) {
+		if (openConnection()) {
+			Statement st = null;
+			try {
+				st = conn.createStatement();
+				st.executeUpdate("update db1.client set Name ='"+Name+"', Surname = '"
+				+Surname+"', Position= '" +Position+  "', Rank = '"+Rank+"', Conclusion = '"+Conclusion+"' where idInspector = '"+idInspector+"';");
+			} 
+			catch (SQLException e) {
+				System.out.println("SQl exception" + e.getMessage());
+				e.printStackTrace();
+			} 
+			finally {
+				try {
+					if (st != null)
+						st.close();
+					closeConnection();
+				} 
+				catch (SQLException e) {
+					e.printStackTrace();
+				}
+				st = null;
+			}
+		}
+	}
+	//удаление клиента
+	public void delInspector(Integer idInspector) {
+		if (openConnection()) {
+			Statement st = null;
+			try {
+				st = conn.createStatement();
+				st.executeUpdate("delete from db1.client where idclient = '" + idInspector + "';");
+			} 
+			catch (SQLException e) {
+				System.out.println("SQl exception" + e.getMessage());
+				e.printStackTrace();
+			} 
+			finally {
+				try {
+					if (st != null)
+						st.close();
+					closeConnection();
+				} 
+				catch (SQLException e) {
+					e.printStackTrace();
+				}
+				st = null;
+			}
+		}
+	}
  }
 
